@@ -11,7 +11,9 @@ protegerRol("medico");
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-      <link rel="stylesheet" href="../../css/principal.css">
+        <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.css' rel='stylesheet'>
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>
+    <link rel="stylesheet" href="../../css/principal.css">
     <link rel="stylesheet" href="../../css/footer.css">
 </head>
 <body>
@@ -19,25 +21,73 @@ protegerRol("medico");
         <?php include(__DIR__ . "/marcadores/headermedico.php"); ?>
 
     </header>
-    <main class="flex-grow-1">
-        <div class="container py-5">
-            <div class="card shadow-lg border-0 d-flex" style="max-width: 900px; margin: 0 auto;">
-                <div class="card-body p-4">
-                    <p class="text-center mb-4">Desde tu panel de médico, puedes gestionar tus citas médicas, revisar los resultados de laboratorio de tus pacientes y acceder a herramientas para mejorar tu práctica médica.</p>
-                    <div class=" card shadow-lg border-0 d-flex grid gap-3">
-                        <a href="citas.php" class="">Gestionar Citas</a>
+
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <!-- PANEL LATERAL -->
+            <div class="col-md-3 mb-3">
+                <div class="card shadow h-100">
+                    <div class="card-header bg-primary text-white text-center">
+                        Opciones de citas
                     </div>
-                    <div class="d-grid gap-3">
-                        <a href="resultados.php" class="btn btn-info">Ver Resultados</a>
+                    <div class="card-body">
+                        <button class="btn btn-success w-100 mb-3">Nueva cita</button>
+                        <button class="btn btn-warning w-100 mb-3"> Editar cita</button>
+                        <button class="btn btn-danger w-100">Eliminar cita</button>
                     </div>
-                    <div class="d-grid gap-3">
-                        <a href="gestionarpacientes.php" class="btn btn-secondary">Gestionar Pacientes</a>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="card shadow">
+                    <div class="card-header bg-white text-center fw-bold fs-5">
+                        Calendario de citas
+                    </div>
+                    <div class="card-body">
+                        <div id="calendar">
+
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <footer class="bg-light text-center text-lg-start mt-auto">
-            <?php include(__DIR__ . "/marcadores/footer.php"); ?>
-        </footer>
+    </div>
+
+    <!-- CALENDARIO -->
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+
+            let calendarEl = document.getElementById('calendar');
+
+            let calendar = new FullCalendar.Calendar(calendarEl, {
+
+                initialView: 'dayGridMonth',
+
+                locale: 'es',
+
+                height: '75vh',
+
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                },
+
+                events: [
+                    
+                ]
+
+            });
+
+            calendar.render();
+
+        });
+
+    </script>    
+
+
+    <footer class="bg-light text-center text-lg-start mt-auto">
+        <?php include(__DIR__ . "/marcadores/footer.php"); ?>
+    </footer>
 </body>
 </html>

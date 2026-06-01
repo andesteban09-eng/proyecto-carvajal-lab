@@ -15,6 +15,7 @@ protegerRol("medico");
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>
     <link rel="stylesheet" href="../../css/principal.css">
     <link rel="stylesheet" href="../../css/footer.css">
+      <link rel="stylesheet" href="../../css/dashboard.css" />
 </head>
 <body>
     <header class="bg-white shadow-sm">

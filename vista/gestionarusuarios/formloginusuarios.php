@@ -77,7 +77,7 @@
                                     </label>
                                     <input
                                         type="text"
-                                        class="form-control-lg w-100" id="email" name="NumeroDocumento" required>
+                                        class="form-control-lg w-100" id="NumeroDocumento" name="NumeroDocumento" required>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">

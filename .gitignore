@@ -7,3 +7,8 @@
 
 .DS_Store
 Thumbs.db
+# Archivos de conexión
+modelo/conexionBD.php
+
+# Configuración de VS Code opcional
+.vscode/

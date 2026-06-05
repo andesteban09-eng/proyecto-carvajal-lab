@@ -25,11 +25,9 @@
         <h2 class="card-title text-center mb-4">Registro para nuevos usuarios</h2>
         <form action="../../controlador/gestionarusuarios/registrar.php"
             method="POST">
-            <div class="card shadow-lg border-0"
-                style="max-width: 900px; margin: 0 auto;">
+            <div class="card shadow-lg border-0"style="max-width: 900px; margin: 0 auto;">
                 <div class="card-body p-4">
-                    <div class="row g-3">
-                        <div class="col-md-6">
+                    <div class="row">
                             <div class="mb-3">
                                 <label class="form-label">Nombre</label>
                                 <input type="text" class="form-control" placeholder="Nombre" name="Nombre">
@@ -41,13 +39,13 @@
                             <div class="mb-3">
                                 <label class="form-label">Tipo de documento</label>
                                 <select class="form-select" name="TipoDocumento">
-                                    <option value="CC" selected>Cédula de Ciudadanía</option>
-                                    <option value="CE">Cédula de Extranjería</option>
-                                    <option value="TI">Tarjeta de Identidad</option>
-                                    <option value="RC">Registro Civil</option>
-                                    <option value="PAS">Pasaporte</option>
-                                    <option value="PPT">Permiso de Trabajo</option>
-                                    <option value="OT">Otro</option>
+                                    <option value="Cedula Ciudadania" selected>Cédula de Ciudadanía</option>
+                                    <option value="Cedula Extranjeria">Cédula de Extranjería</option>
+                                    <option value="Tarjeta Identidad">Tarjeta de Identidad</option>
+                                    <option value="Registro Civil">Registro Civil</option>
+                                    <option value="Pasaporte">Pasaporte</option>
+                                    <option value="Permiso Proteccion Temporal">Permiso de Trabajo</option>
+                                    <option value="Otro">Otro</option>
                                 </select>
                             </div>
                             <div class="mb-3">
@@ -59,8 +57,12 @@
                                 <input type="tel" class="form-control" placeholder="Teléfono" name="Telefono">
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Correo electrónico</label>
-                                <input type="email" class="form-control" placeholder="Correo electrónico" name="Correo">
+                                <label class="form-label">Direccion</label>
+                                <input type="text" class="form-control" placeholder="Direccion" name="Direccion">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Ciudad</label>
+                                <input type="text" class="form-control" placeholder="Ciudad" name="Ciudad">
                             </div>
                             <div class="mb-4">
                                 <label class="form-label">Contraseña</label>
@@ -76,7 +78,6 @@
                     <div class="d-flex justify-content-center mt-2">
                         <button class="btn btn-primary btn-lg px-4">Confirmar</button>
                     </div>
-                </div>
             </div>
         </form>
     </div>

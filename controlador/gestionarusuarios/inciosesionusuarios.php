@@ -25,8 +25,8 @@ if (!$usuario) {
 
 $_SESSION['usuario'] = $usuario['NumeroDocumento'];
 $_SESSION['rol'] = $rol;
-$_SESSION['nombre'] = $usuario['Nombre'];
-$_SESSION['apellido'] = $usuario['Apellido'];
+$_SESSION['nombre'] = $usuario['nombre'];
+$_SESSION['apellido'] = $usuario['apellido'];
 
 if($rol == "paciente"){
     $_SESSION['idUsuario'] = $usuario['idPaciente'];

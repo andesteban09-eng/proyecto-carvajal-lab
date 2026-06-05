@@ -1,7 +1,31 @@
 <?php
 include (__DIR__."/../../modelo/proteccion.php");
 protegerRol("medico");
+
+include (__DIR__."/../../modelo/conexionBD.php");
+
+$idMedico = $_SESSION['idUsuario'];
+
+$sql = "SELECT idCita,
+                detalle AS title,
+                fechaCita AS start,
+                estadoCita  
+        FROM cita 
+        WHERE idProfesionalSalud = $idMedico";
+
+$resultado = mysqli_query($conexion, $sql);
+
+$citas = [];
+while ($fila = mysqli_fetch_assoc($resultado)) {
+    $fila["color"] = match($fila["estadoCita"]) {
+        "Pendiente" => "#ffc107",
+        "Realizada" => "#198754",
+        "Cancelada" => "#dc3545",
+    };
+    $citas[] = $fila;
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,6 +54,7 @@ protegerRol("medico");
                 <div class="card shadow h-100">
                     <div class="card-header bg-primary text-white text-center">
                         Opciones de citas
+                        
                     </div>
                     <div class="card-body">
                         <button class="btn btn-success w-100 mb-3">Nueva cita</button>
@@ -74,9 +99,8 @@ protegerRol("medico");
                     right: 'dayGridMonth,timeGridWeek,timeGridDay'
                 },
 
-                events: [
-                    
-                ]
+                events: <?php echo json_encode($citas); ?>,
+        
 
             });
 

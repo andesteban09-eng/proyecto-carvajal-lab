@@ -1,3 +1,6 @@
+<?php
+include(__DIR__ . "/modelo/conexionBD.php");
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -192,7 +195,7 @@
         </div>
 
         <div class="col-6 col-md-4 col-lg-2">
-          <a href="#" class="acceso-card">
+          <a href="vista/gestionarusuarios/formcotizar.php" class="acceso-card">
             <div class="icon-wrap" style="background:#f0ebff;color:#7b2ff7;">
               <i class="bi bi-cash-coin"></i>
             </div>

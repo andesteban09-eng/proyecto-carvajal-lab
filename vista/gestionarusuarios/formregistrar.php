@@ -76,7 +76,7 @@
                     </div>
 
                     <div class="d-flex justify-content-center mt-2">
-                        <button class="btn btn-primary btn-lg px-4">Confirmar</button>
+                        <button class="btn btn-primary btn-lg mb-3 px-4">Confirmar</button>
                     </div>
             </div>
         </form>

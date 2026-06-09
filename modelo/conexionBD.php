@@ -1,6 +1,10 @@
 <?php
 $host = "localhost";
 $user = "root";
+/*
+Si utiliza Laragon con contraseña personalizada,
+actualice el valor de $pass.
+*/
 $pass = "laragon123";
 $dbname = "Proyecto_carvajal";
 

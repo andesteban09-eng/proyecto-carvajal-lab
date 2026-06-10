@@ -176,7 +176,7 @@ echo "<div class='alert text-center'>
 
         <!-- RESULTADOS -->
         <div class="col-md-4">
-            <a href="../../controlador/gestionarreportes/reportePacientes.php" target="_blank" 
+            <a href="../../controlador/gestionarreportes/reportecitas.php" target="_blank" 
                 class="text-decoration-none">
 
                 <div class="card shadow-sm border-0 h-100 text-center">

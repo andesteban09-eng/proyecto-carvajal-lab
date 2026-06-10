@@ -13,7 +13,7 @@ try {
         throw new Exception("No se seleccionó horario");
     }
 
-    // 🔵 1. Traer datos reales desde agenda
+    // 1. Traer datos reales desde agenda
     $sql = "SELECT a.*, s.idTipoServicio, a.idSede
             FROM agenda a
             INNER JOIN profesionalsalud p ON a.idProfesionalSalud = p.idProfesionalSalud
@@ -33,7 +33,7 @@ try {
     $fecha = $data['fecha'] . ' ' . $data['horaInicio'];
     $idTipoServicio = $data['idTipoServicio'];
 
-    // 🔵 2. Insertar cita
+    //  2. Insertar cita
     $sqlInsert = "INSERT INTO cita 
     (idPaciente, idProfesionalSalud, idSede, idTipoServicio, fechaCita, detalle)
     VALUES 

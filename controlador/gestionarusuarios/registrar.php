@@ -7,10 +7,11 @@ $NumeroDocumento = $_POST['NumeroDocumento'];
 $Nombre = $_POST['Nombre'];
 $Apellido = $_POST['Apellido'];
 $Telefono = $_POST['Telefono'];
-$Correo = $_POST['Correo'];
+$Direccion = $_POST['Direccion'];
+$Ciudad = $_POST['Ciudad'];
 $Contrasena = $_POST['Contrasena'];
 $ConfirmarContrasena = $_POST['ConfirmarContrasena'];
-$sqlValidar = "SELECT * FROM paciente WHERE Correo = '$Correo'";
+$sqlValidar = "SELECT * FROM paciente WHERE NumDoc = '$NumeroDocumento'";
 $consulta = mysqli_query($conexion, $sqlValidar);
 
 if(mysqli_num_rows($consulta) > 0){
@@ -38,8 +39,8 @@ if(!$ValidarContrasena){
            exit();
 }
 
-$sql= "INSERT INTO paciente (TipoDoc, NumDoc, Nombre, Apellido, Telefono, Correo, Contrasena) 
-VALUES ('$TipoDocumento', '$NumeroDocumento', '$Nombre', '$Apellido', '$Telefono', '$Correo', '$Contrasena')";
+$sql= "INSERT INTO paciente (TipoDoc, NumDoc, Nombre, Apellido, Telefono,Direccion,Ciudad, Contrasena) 
+VALUES ('$TipoDocumento', '$NumeroDocumento', '$Nombre', '$Apellido', '$Telefono','$Direccion','$Ciudad','$Contrasena')";
 $resultado = mysqli_query($conexion, $sql);
 
 
